@@ -21,7 +21,7 @@ services:
   #     MYSQL_DATABASE: sinhviendb
   backend:
     build: 
-      context: .././sv-app-be
+      context: .
       dockerfile: Dockerfile 
     command:  npm start   
     restart: always 
@@ -41,7 +41,7 @@ services:
       # - mysql
   nginx:
     build: 
-      context: .././nginx
+      context: ./src/config/nginx
       dockerfile: Dockerfile 
     ports:
     - '80:80'
