@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:alpine3.16
+    restart: always
+    # networks:
+    #   - app-tier
+    ports:
+      - "6380:6379"
+  # mysql:
+  #   image: mysql:8.0
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   restart: always
+  #   networks:
+  #     - app-tier
+  #   ports:
+  #     - "3307:3306"
+  #   environment:
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: ok
+  #     MYSQL_ROOT_PASSWORD: sapassword
+  #     MYSQL_DATABASE: sinhviendb
+  backend:
+    build: 
+      context: .././sv-app-be
+      dockerfile: Dockerfile 
+    command:  npm start   
+    restart: always 
+    # networks:
+    #   - app-tier
+    ports:
+      - "4000:4000"
+    environment:
+      REDIS_HOST: redis
+      # MYSQL_HOST: mysql
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: sapassword
+      # MYSQL_DATABASE: sinhviendb
+      PORT: 4000
+    depends_on:
+      - redis
+      # - mysql
+  nginx:
+    build: 
+      context: .././nginx
+      dockerfile: Dockerfile 
+    ports:
+    - '80:80'
+    depends_on:
+    - backend    
+# networks:
+#   app-tier:
+#     driver: bridge   
