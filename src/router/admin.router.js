@@ -100,5 +100,52 @@ router
 router
   .route("/getDSMonHoc")
   .get(verifyAccessToken, AdminGetController.getDanhSachMonHoc);
-
+router
+  .route("/getAllChuyenNganh")
+  .get(verifyAccessToken, AdminGetController.getDanhSachChuyenNganh);
+router
+  .route("/getAllHocPhan")
+  .get(verifyAccessToken, AdminGetController.getDanhSachHocPhan);
+router
+  .route("/getAllHocKi")
+  .get(verifyAccessToken, AdminGetController.getDanhSachHocKi);
+router
+  .route("/getAllLopHocPhan")
+  .get(verifyAccessToken, AdminGetController.getDanhSachLopHocPhan);
+router
+  .route("/getAllPhanCong")
+  .get(verifyAccessToken, AdminGetController.getDanhSachPhanCongLopHocPhan);
+router
+  .route("/getAllPhong")
+  .get(verifyAccessToken, AdminGetController.getDanhSachPhongHoc);
+router
+  .route("/getAllTKB")
+  .get(verifyAccessToken, AdminGetController.getDanhSachThoiKhoaBieu);
+router
+  .route("/getDsMonTheoKhoa")
+  .put(verifyAccessToken, AdminGetController.getDSMonTheoKhoa);
+router
+  .route("/getHocPhanTheoChuyenNganh")
+  .put(verifyAccessToken, AdminGetController.getDSHocPhanTheoChuyenNganh);
+router
+  .route("/getDSLopTheoHocKi")
+  .put(verifyAccessToken, AdminGetController.getDSLopTheoHocKi);
+router
+  .route("/getDSLopTheoChuyenNganhHocKi")
+  .put(verifyAccessToken, AdminGetController.getDSLopTheoChuyenNganhHocKi);
+router
+  .route("/getDSPhanCongTheoMaGiangVien")
+  .put(verifyAccessToken, AdminGetController.getDSPhanCongTheoMaGiangVien);
+router
+  .route("/getDSPhanCongTheoMaLHP")
+  .put(verifyAccessToken, AdminGetController.getDSPhanCongTheoMaLHP);
+router
+  .route("/getDSTKBTheoMaCNVaHocKi")
+  .put(verifyAccessToken, AdminGetController.getDSTKBTheoMaCNVaHocKi);
+router
+  .route("/getDsPhongTheoTen")
+  .put(verifyAccessToken, AdminGetController.getDsPhongTheoTen);
+router
+  .route("/taoMaSinhVien")
+  .get(verifyAccessToken, AdminGetController.taoMaSinhVien);
 module.exports = router;

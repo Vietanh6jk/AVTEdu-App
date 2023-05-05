@@ -59,6 +59,9 @@ router
 router
   .route("/getKetQuaHocTap")
   .put(verifyAccessToken, userRequestController.getKetQuaHocTap);
+  router
+  .route("/getLopHocPhanKhongTrung")
+  .put(verifyAccessToken, userRequestController.getLopHocPhanKhongTrung);  
 
 
 module.exports = router;

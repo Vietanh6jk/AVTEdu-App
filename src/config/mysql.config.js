@@ -9,8 +9,8 @@ require('dotenv').config();
 
 // const DatabaseName = "sinhviendb";
 // const DatabaseUsername = "root";
-// // const DatabasePassword = "Sapassword_123";
-// const DatabasePassword = "sapassword";
+// const DatabasePassword = "Sapassword_123";
+// //const DatabasePassword = "sapassword";
 
 // const ConnectDB = (function () {
 //     var instance;
@@ -33,7 +33,7 @@ require('dotenv').config();
 //                 host: 'localhost',
 //                 dialect: 'mysql',
 //                 logging: false,
-//                 port:process.env.MYSQL_PORT||3306
+//                 port: process.env.MYSQL_PORT || 3306
 //             }
 //         );
 //         sequelize.authenticate().then(() => {
@@ -50,29 +50,16 @@ require('dotenv').config();
 //         }
 //     }
 // })
-
-
 // module.exports = {
 //     ConnectDB
 // };
+
+
 
 //#region Connect RDS
 // const Sequelize = require('sequelize');
 // const mysql = require('mysql2/promise');
 // require('dotenv').config();
-
-
-
-// const DatabaseName = "sinhviendb";
-// const DatabaseUsername = 'admin';
-// const DatabasePassword = "12345678";
-
-
-// const Sequelize = require('sequelize');
-// const mysql = require('mysql2/promise');
-// require('dotenv').config();
-
-
 
 const DatabaseName = "sinhviendb";
 const DatabaseUsername = 'admin';
@@ -111,3 +98,4 @@ const ConnectDB = (function () {
 module.exports = {
     ConnectDB
 };
+//#endregion

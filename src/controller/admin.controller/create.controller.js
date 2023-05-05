@@ -44,7 +44,7 @@ const createSinhVien = async (req, res, next) => {
       ho_ten_sinh_vien: ten,
       ngay_sinh: ngay_sinh,
       email: email,
-      gioitinh: gioitinh,
+      gioitinh: 0,
       mat_khau: newPassword,
       so_dien_thoai: sdt,
       so_cmnd: so_cmnd,
